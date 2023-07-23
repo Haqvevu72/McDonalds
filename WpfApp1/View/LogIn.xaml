@@ -9,8 +9,7 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush>
-                <GradientStop Color="LightYellow" Offset="1"></GradientStop>
-                <GradientStop Color="LightPink"></GradientStop>
+                <GradientStop Color="LightGoldenrodYellow"></GradientStop>
             </LinearGradientBrush>
         </Grid.Background>
         
@@ -20,7 +19,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Image Source="C:\Users\Elgun\source\repos\WpfApp1\WpfApp1\Images\LogIn.jpg" Stretch="UniformToFill"></Image>
+        <Image Source="\Images\McDonald.webp" Stretch="UniformToFill"></Image>
 
         <StackPanel Grid.Column="1" Height="200">
             <Label Style="{StaticResource label}">Username</Label>

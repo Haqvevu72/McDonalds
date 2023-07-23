@@ -8,11 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\LogIn.jpg" />
+    <None Remove="Images\McDonald.webp" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\LogIn.jpg" />
+    <Resource Include="Images\McDonald.webp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
