@@ -20,9 +20,22 @@ namespace WpfApp1.View
     /// </summary>
     public partial class LogIn : Window
     {
+        public ICommand? _login { get; set; }
         public LogIn()
         {
             InitializeComponent();
+            DataContext = this;
+            _login = new RelayCommand(exe_log,can_exe_log);
+        }
+
+        public void exe_log(object? parameter) 
+        {
+            
+        }
+        public bool can_exe_log(object? parameter) 
+        {
+            if (Username.Text != "" && Password.Password != "") { return true; }
+            return false;
         }
     }
 }

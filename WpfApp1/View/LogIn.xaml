@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="LogIn" Height="450" Width="800">
     <Grid>
+        
         <Grid.Background>
             <LinearGradientBrush>
                 <GradientStop Color="LightGoldenrodYellow"></GradientStop>
@@ -25,13 +26,13 @@
             <Label Style="{StaticResource label}">Username</Label>
             <TextBox x:Name="Username" Style="{StaticResource text_box}"></TextBox>
             <Label Style="{StaticResource label}">Password</Label>
-            <PasswordBox Style="{StaticResource password_box}"></PasswordBox>
+            <PasswordBox x:Name="Password" Style="{StaticResource password_box}"></PasswordBox>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
-                <Button Style="{StaticResource button}">Log In</Button>
+                <Button Style="{StaticResource button}" Command="{Binding _login}">Log In</Button>
                 <Button Style="{StaticResource button}">Register</Button>
             </StackPanel>
              
         </StackPanel>
-    
+        <Frame x:Name="LogInFrame" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>
