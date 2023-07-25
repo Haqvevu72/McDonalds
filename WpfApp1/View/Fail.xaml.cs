@@ -12,7 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using WpfApp1.ViewModel;
+using WpfApp1.View;
 namespace WpfApp1.View
 {
     /// <summary>
@@ -20,9 +21,22 @@ namespace WpfApp1.View
     /// </summary>
     public partial class Fail : Page
     {
+        public ICommand _back { get; set; }
         public Fail()
         {
             InitializeComponent();
+            DataContext = this;
+            _back = new RelayCommand(exe_back,can_exe_back);
+        }
+        public void exe_back(object? parameter) 
+        {
+            LogIn logIn = new LogIn();
+            logIn.LogInFrame.Navigate(new LogIn());
+        }
+    
+        public bool can_exe_back(object? parameter) 
+        {
+            return true;
         }
     }
 }

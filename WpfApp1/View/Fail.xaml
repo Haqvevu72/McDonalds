@@ -12,6 +12,7 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image Source="\Images\Fail.webp" Width="150"></Image>
             <Label FontSize="16" FontWeight="Bold" Foreground="Red" Content="Access Denied !" HorizontalAlignment="Center"/>
+            <Button Style="{StaticResource button}" Command="{Binding _back}">Back</Button>
         </StackPanel>
     </Grid>
 </Page>
