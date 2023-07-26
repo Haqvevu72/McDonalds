@@ -10,15 +10,14 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1.View.Pages
+namespace WpfApp1.View
 {
     /// <summary>
     /// Interaction logic for AddTable.xaml
     /// </summary>
-    public partial class AddTable : Page
+    public partial class AddTable : Window
     {
         public AddTable()
         {

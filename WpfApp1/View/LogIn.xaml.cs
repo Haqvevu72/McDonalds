@@ -54,7 +54,8 @@ namespace WpfApp1.View
                 {
                     situation.Foreground = Brushes.ForestGreen;
                     situation.Text= "Access Successful !";
-                    LogInFrame.Navigate(new AdminTable());
+                    Thread.Sleep(1200);
+                    if(Username.Text=="admin" && Password.Password=="admin") LogInFrame.Navigate(new AdminTable());
                     break;
                 }
                 situation.Foreground = Brushes.Red;

@@ -12,17 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.ViewModel;
 
 namespace WpfApp1.View.Pages
 {
-    /// <summary>
-    /// Interaction logic for AdminTable.xaml
-    /// </summary>
     public partial class AdminTable : Page
     {
+        
         public AdminTable()
         {
             InitializeComponent();
+            DataContext = this;
+        }
+        private void AddTable_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

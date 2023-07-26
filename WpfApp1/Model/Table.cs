@@ -8,5 +8,13 @@ namespace WpfApp1.Model
 {
     internal class Table
     {
+        public Table(string? tableName, int chairNumber)
+        {
+            TableName = tableName;
+            ChairNumber = chairNumber;
+        }
+
+        public string? TableName { get; set; }
+        public int ChairNumber { get; set; }
     }
 }
