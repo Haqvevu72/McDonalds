@@ -21,17 +21,17 @@
 
         <Image Source="\Images\McDonald.webp" Stretch="UniformToFill"></Image>
 
-        <StackPanel Grid.Column="1" Height="200">
+        <StackPanel Grid.Column="1" Height="218">
             <Label Style="{StaticResource label}">Username</Label>
             <TextBox x:Name="Username" Style="{StaticResource text_box}"></TextBox>
             <Label Style="{StaticResource label}">Password</Label>
             <PasswordBox x:Name="Password" Style="{StaticResource password_box}"></PasswordBox>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
-                <Button Style="{StaticResource button}" Command="{Binding _login}">Log In</Button>
-                <Button Style="{StaticResource button}" Command="{Binding _register}">Register</Button>
-            </StackPanel>
-             
+                    <Button Style="{StaticResource button}" Command="{Binding _login}">Log In</Button>
+                    <Button Style="{StaticResource button}" Command="{Binding _register}">Register</Button>
+                </StackPanel>
+            <TextBlock x:Name="situation" Style="{StaticResource text_block}"></TextBlock>
         </StackPanel>
-        <Frame x:Name="LogInFrame" Grid.Column="1" NavigationUIVisibility="Hidden" />
+        <Frame x:Name="LogInFrame" Grid.ColumnSpan="2" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

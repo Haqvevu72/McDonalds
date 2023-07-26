@@ -21,6 +21,8 @@ using System.Text.Json.Serialization;
 using System.Net.Http.Json;
 using Newtonsoft.Json;
 using System.Threading;
+using WpfApp1.View.Pages;
+
 namespace WpfApp1.View
 {
     /// <summary>
@@ -50,19 +52,40 @@ namespace WpfApp1.View
             {
                 if (Username.Text == _users[i].Username && Password.Password == _users[i].Password)
                 {
-                    LogInFrame.Navigate(new Logged());
+                    situation.Foreground = Brushes.ForestGreen;
+                    situation.Text= "Access Successful !";
+                    LogInFrame.Navigate(new AdminTable());
                     break;
                 }
-                LogInFrame.Navigate(new Fail());
+                situation.Foreground = Brushes.Red;
+                situation.Text = "Access Denied !";
             }
         }
         public void exe_reg(object? parameter)
         {
-            _users.Add(new User(Username.Text, Password.Password));
-            string txt_reg = JsonConvert.SerializeObject(_users);
-            File.WriteAllText("C:\\Users\\Elgun\\Source\\Repos\\McDonalds\\WpfApp1\\JSON Files\\Users.json", txt_reg);
-            LogInFrame.Navigate(new Registered());
-            LogInFrame.Navigate(new LogIn());
+            bool exist = false;
+            for (int i = 0; i < _users.Count; i++)
+            {
+                if (Username.Text == _users[i].Username && Password.Password == _users[i].Password)
+                {
+                    exist = true;
+                    break;
+                }
+                
+            }
+            if (exist == false)
+            {
+                _users.Add(new User(Username.Text, Password.Password));
+                string txt_reg = JsonConvert.SerializeObject(_users);
+                File.WriteAllText("C:\\Users\\Elgun\\Source\\Repos\\McDonalds\\WpfApp1\\JSON Files\\Users.json", txt_reg);
+                situation.Foreground = Brushes.ForestGreen;
+                situation.Text = "Register Successful !";
+            }
+            else
+            {
+                situation.Foreground = Brushes.Red;
+                situation.Text = "Register Denied !";
+            }
         }
         public bool can_exe_log(object? parameter)
         {

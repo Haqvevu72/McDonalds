@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1.View
+namespace WpfApp1.View.Pages
 {
     /// <summary>
-    /// Interaction logic for Logged.xaml
+    /// Interaction logic for AdminTable.xaml
     /// </summary>
-    public partial class Logged : Page
+    public partial class AdminTable : Page
     {
-        public Logged()
+        public AdminTable()
         {
             InitializeComponent();
         }

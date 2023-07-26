@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1.View
+namespace WpfApp1.View.Pages
 {
     /// <summary>
-    /// Interaction logic for MainView.xaml
+    /// Interaction logic for AddTable.xaml
     /// </summary>
-    public partial class MainView : Window
+    public partial class AddTable : Page
     {
-        public MainView()
+        public AddTable()
         {
             InitializeComponent();
         }
