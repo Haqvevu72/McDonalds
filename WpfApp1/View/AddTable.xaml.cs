@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -37,16 +38,31 @@ namespace WpfApp1.View
             table_list.ItemsSource = tables;
         }
 
-        public void exe_add_table(object? parameter) 
+        public void exe_add_table(object? parameter)
         {
-            tables.Add(new table(table_name.Text, chair_count.Text));
-            string tables_json = JsonConvert.SerializeObject(tables);
-            File.WriteAllText("C:\\Users\\Elgun\\Source\\Repos\\McDonalds\\WpfApp1\\JSON Files\\Tables.json", tables_json);
+            if (IsNumeric(chair_count.Text))
+            {
+                tables.Add(new table(table_name.Text, chair_count.Text));
+                string tables_json = JsonConvert.SerializeObject(tables);
+                File.WriteAllText("C:\\Users\\Elgun\\Source\\Repos\\McDonalds\\WpfApp1\\JSON Files\\Tables.json", tables_json);
+                Invalid.Text = null;
+            }
+            else 
+            {
+                Invalid.Foreground = Brushes.Red;
+                Invalid.Text = "Invalid Input !";
+            }
         }
         public bool canexe_add_table(object? parameter) 
         {
             if (table_name.Text != "" && chair_count.Text != "") { return true; }
             return false;
+        }
+
+        private bool IsNumeric(string text)
+        {
+            // Try parsing the text as a number
+            return double.TryParse(text, out _);
         }
     }
 }

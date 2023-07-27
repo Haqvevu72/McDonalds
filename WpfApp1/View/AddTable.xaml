@@ -18,6 +18,7 @@
             <Label Style="{StaticResource label}">Chair Count:</Label>
             <TextBox x:Name="chair_count" Style="{StaticResource text_box}"></TextBox>
             <Button  Style="{StaticResource button}" Command="{Binding add_table}">Add</Button>
+            <TextBlock x:Name="Invalid" Style="{StaticResource text_block}"></TextBlock>
         </StackPanel>
 
         <ListView x:Name="table_list"  Grid.Column="1" Background="LightGoldenrodYellow">
