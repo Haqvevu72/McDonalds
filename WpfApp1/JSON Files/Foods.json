@@ -1,0 +1,17 @@
+[
+  {
+    "FoodName": "Big Mac",
+    "FoodCost": "30 $",
+    "FoodImage": "\\Images\\FoodImages\\BigMac.jpg"
+  },
+  {
+    "FoodName": "French Fries",
+    "FoodCost": "12 $",
+    "FoodImage": "\\Images\\FoodImages\\FrenchFries.webp"
+  },
+  {
+    "FoodName": "StrawBery",
+    "FoodCost": "10 $",
+    "FoodImage": "\\Images\\FoodImages\\StrawBery.jpg"
+  }
+]

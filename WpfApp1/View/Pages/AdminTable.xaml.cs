@@ -29,5 +29,11 @@ namespace WpfApp1.View.Pages
             AddTable addTable = new AddTable();
             addTable.ShowDialog();
         }
+
+        private void AddFood_Click(object sender, RoutedEventArgs e)
+        {
+            AddFood addFood = new AddFood();
+            addFood.ShowDialog();
+        }
     }
 }

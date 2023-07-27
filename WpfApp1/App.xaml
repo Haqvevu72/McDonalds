@@ -13,6 +13,8 @@
                 <ResourceDictionary Source="Resources\TextBlock.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Resources\Button2.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Resources\Button3.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Resources\TextBlock2.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Resources\Label2.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

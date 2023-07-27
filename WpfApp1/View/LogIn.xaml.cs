@@ -52,9 +52,6 @@ namespace WpfApp1.View
             {
                 if (Username.Text == _users[i].Username && Password.Password == _users[i].Password)
                 {
-                    situation.Foreground = Brushes.ForestGreen;
-                    situation.Text= "Access Successful !";
-                    Thread.Sleep(1200);
                     if(Username.Text=="admin" && Password.Password=="admin") LogInFrame.Navigate(new AdminTable());
                     break;
                 }
