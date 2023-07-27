@@ -8,7 +8,7 @@
         <Setter Property="FontWeight" Value="Bold"></Setter>
         <Setter Property="Background" Value="SandyBrown"></Setter>
         <Setter Property="Foreground" Value="White"></Setter>
-        <Setter Property="Margin" Value="17"></Setter>
+        <Setter Property="Margin" Value="80,0,0,0"></Setter>
         <Setter Property="BorderThickness" Value="0"></Setter>
         <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
         <Setter Property="VerticalContentAlignment" Value="Center"></Setter>

@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Model
 {
-    internal class Table
+    internal class table
     {
-        public Table(string? tableName, int chairNumber)
+        public table(string? tableName, string chairNumber)
         {
             TableName = tableName;
             ChairNumber = chairNumber;
         }
 
         public string? TableName { get; set; }
-        public int ChairNumber { get; set; }
+        public string? ChairNumber { get; set; }
     }
 }

@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="AddTable" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Source="\Images\McDonald.webp" Stretch="UniformToFill"></Image>
+        <StackPanel Height="300" Width="370" Background="LightGoldenrodYellow">
+            <Label Style="{StaticResource label}">Tabe Name:</Label>
+            <TextBox x:Name="table_name"  Style="{StaticResource text_box}"></TextBox>
+            <Label Style="{StaticResource label}">Chair Count:</Label>
+            <TextBox x:Name="chair_count" Style="{StaticResource text_box}"></TextBox>
+            <Button  Style="{StaticResource button}" Command="{Binding add_table}">Add</Button>
+        </StackPanel>
+
+        <ListView x:Name="table_list"  Grid.Column="1" Background="LightGoldenrodYellow">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Button Style="{StaticResource button_3}" Content="{Binding TableName}"></Button>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>

@@ -11,7 +11,7 @@
     <Grid Background="LightGoldenrodYellow">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="100">
             <Button Style="{StaticResource button_2}">Add Food To Menu</Button>
-            <Button Name="AddTable" Style="{StaticResource button_2}" Click="AddTable_Click">Add Table</Button>
+            <Button Name="Addtable" Style="{StaticResource button_2}" Click="AddTable_Click">Add Table</Button>
         </StackPanel>
     </Grid>
 </Page>

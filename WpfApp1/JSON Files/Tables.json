@@ -1,6 +1,1 @@
-[
-  {
-    "TableName": "Table1",
-    "ChairNumber": "5"
-  }
-]
+[{"TableName":"Table1","ChairNumber":"5"},{"TableName":"Table2","ChairNumber":"3"}]
