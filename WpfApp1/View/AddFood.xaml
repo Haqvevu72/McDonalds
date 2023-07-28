@@ -19,7 +19,7 @@
             <TextBox x:Name="food_cost" Style="{StaticResource text_box}"></TextBox>
             <Label Style="{StaticResource label}">Image Path:</Label>
             <TextBox x:Name="food_image_path" Style="{StaticResource text_box}"></TextBox>
-            <Button Style="{StaticResource button}">Add Food</Button>
+            <Button Style="{StaticResource button}" Command="{Binding add_food}">Add Food</Button>
         </StackPanel>
         <ListView x:Name="food_list" Grid.Column="1" Background="LightGoldenrodYellow"> 
             <ListView.ItemTemplate>

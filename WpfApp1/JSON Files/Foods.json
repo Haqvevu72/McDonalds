@@ -13,5 +13,10 @@
     "FoodName": "StrawBery",
     "FoodCost": "10 $",
     "FoodImage": "\\Images\\FoodImages\\StrawBery.jpg"
+  },
+  {
+    "FoodName": "Chicken Burger",
+    "FoodCost": "21 $",
+    "FoodImage": "\\Images\\FoodImages\\Chicken Burger.jpg"
   }
 ]

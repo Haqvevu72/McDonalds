@@ -11,6 +11,7 @@
     <None Remove="Images\AddFood.png" />
     <None Remove="Images\Fail.webp" />
     <None Remove="Images\FoodImages\BigMac.jpg" />
+    <None Remove="Images\FoodImages\Chicken Burger.jpg" />
     <None Remove="Images\FoodImages\FrenchFries.webp" />
     <None Remove="Images\FoodImages\StrawBery.jpg" />
     <None Remove="Images\Logged.webp" />
@@ -25,6 +26,7 @@
     <Resource Include="Images\AddFood.png" />
     <Resource Include="Images\Fail.webp" />
     <Resource Include="Images\FoodImages\BigMac.jpg" />
+    <Resource Include="Images\FoodImages\Chicken Burger.jpg" />
     <Resource Include="Images\FoodImages\FrenchFries.webp" />
     <Resource Include="Images\FoodImages\StrawBery.jpg" />
     <Resource Include="Images\Logged.webp" />
