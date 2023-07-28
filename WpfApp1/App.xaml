@@ -15,6 +15,8 @@
                 <ResourceDictionary Source="Resources\Button3.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Resources\TextBlock2.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Resources\Label2.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Resources\StackPanel.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Resources\TextBlock3.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

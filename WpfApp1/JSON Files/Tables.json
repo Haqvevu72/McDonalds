@@ -1,22 +1,32 @@
 [
   {
     "TableName": "Table1",
-    "ChairNumber": "5"
+    "ChairNumber": "5",
+    "Orders": null
   },
   {
     "TableName": "Table2",
-    "ChairNumber": "3"
+    "ChairNumber": "3",
+    "Orders": null
   },
   {
     "TableName": "Table3",
-    "ChairNumber": "12"
+    "ChairNumber": "12",
+    "Orders": null
   },
   {
     "TableName": "Table4",
-    "ChairNumber": "4"
+    "ChairNumber": "4",
+    "Orders": null
   },
   {
     "TableName": "Table5",
-    "ChairNumber": "4"
+    "ChairNumber": "4",
+    "Orders": null
+  },
+  {
+    "TableName": "Table6",
+    "ChairNumber": "12",
+    "Orders": null
   }
 ]

@@ -25,7 +25,7 @@
             <Button Style="{StaticResource button}">Order</Button>
         </StackPanel>
 
-        <ListView Name="_tables" Grid.Column="1">
+        <ListView Name="_tables" Grid.Column="1" Background="LightGoldenrodYellow">
             
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
