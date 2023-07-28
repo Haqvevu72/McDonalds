@@ -52,7 +52,8 @@ namespace WpfApp1.View
             {
                 if (Username.Text == _users[i].Username && Password.Password == _users[i].Password)
                 {
-                    if(Username.Text=="admin" && Password.Password=="admin") LogInFrame.Navigate(new AdminTable());
+                    if (Username.Text == "admin" && Password.Password == "admin") LogInFrame.Navigate(new AdminTable());
+                    else LogInFrame.Navigate(new WaiterTable()); 
                     break;
                 }
                 situation.Foreground = Brushes.Red;

@@ -16,6 +16,7 @@
     <None Remove="Images\FoodImages\StrawBery.jpg" />
     <None Remove="Images\Logged.webp" />
     <None Remove="Images\McDonald.webp" />
+    <None Remove="Images\WaiterTable.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +32,7 @@
     <Resource Include="Images\FoodImages\StrawBery.jpg" />
     <Resource Include="Images\Logged.webp" />
     <Resource Include="Images\McDonald.webp" />
+    <Resource Include="Images\WaiterTable.jpg" />
   </ItemGroup>
 
 </Project>
