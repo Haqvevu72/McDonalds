@@ -8,7 +8,7 @@ namespace WpfApp1.Model
 {
     internal class Food
     {
-        public Food(string? foodName, string? foodCost, string? foodImage)
+        public Food(string? foodName, int foodCost, string? foodImage)
         {
             FoodName = foodName;
             FoodCost = foodCost;
@@ -16,7 +16,7 @@ namespace WpfApp1.Model
         }
 
         public string? FoodName { get; set; }
-        public string? FoodCost { get; set; }
+        public int FoodCost { get; set; }
         public string? FoodImage { get; set; }
     }
 }

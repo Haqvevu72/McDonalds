@@ -7,6 +7,36 @@
         mc:Ignorable="d"
         Title="OrderFood" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <DataGrid Name="order_schedule"  AutoGenerateColumns="True"></DataGrid>
+            <Button Style="{StaticResource button}">Done</Button>
+        </StackPanel>
+        <ListView x:Name="menu" Grid.Column="1" Background="LightGoldenrodYellow" SelectionChanged="menu_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="100" Width="600">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.3*"></ColumnDefinition>
+                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="{Binding FoodImage}" Stretch="Fill"></Image>
+                        <StackPanel Grid.Column="1">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Style="{StaticResource label2}">Food Name:</Label>
+                                <TextBlock Style="{StaticResource text_Block2}" Text="{Binding FoodName}"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Style="{StaticResource label2}">Food Cost:</Label>
+                                <TextBlock Style="{StaticResource text_Block2}" Text="{Binding FoodCost}"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>

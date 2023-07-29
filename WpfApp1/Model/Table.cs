@@ -18,6 +18,6 @@ namespace WpfApp1.Model
 
         public string? TableName { get; set; }
         public string? ChairNumber { get; set; }
-        public ObservableCollection<Food> Orders { get; set; }
+        public ObservableCollection<Order> Orders { get; set; }
     }
 }

@@ -63,7 +63,7 @@ namespace WpfApp1.View
 
                     
                     string imageName = System.IO.Path.GetFileName(imagePath);
-                    foods.Add(new Food(food_name.Text, food_cost.Text, "\\Images\\FoodImages\\" + imageName));
+                    foods.Add(new Food(food_name.Text, int.Parse(food_cost.Text), "\\Images\\FoodImages\\" + imageName));
                     string food_json=JsonConvert.SerializeObject(foods);
                     File.WriteAllText("C:\\Users\\Elgun\\Source\\Repos\\McDonalds\\WpfApp1\\JSON Files\\Foods.json", food_json);
                 }

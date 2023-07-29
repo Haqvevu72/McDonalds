@@ -16,6 +16,8 @@ using System.Windows.Shapes;
 using WpfApp1.Model;
 using System.IO;
 using Newtonsoft.Json;
+using WpfApp1.ViewModel;
+
 namespace WpfApp1.View.Pages
 {
     /// <summary>
@@ -24,6 +26,7 @@ namespace WpfApp1.View.Pages
     public partial class WaiterTable : Page
     {
         ObservableCollection<table> tables { get; set; }
+        public ICommand _order { get; set; }
         public WaiterTable()
         {
             InitializeComponent();
@@ -31,6 +34,17 @@ namespace WpfApp1.View.Pages
             string table_json = File.ReadAllText("C:\\Users\\Elgun\\Source\\Repos\\McDonalds\\WpfApp1\\JSON Files\\Tables.json");
             tables = JsonConvert.DeserializeObject<ObservableCollection<table>>(table_json);
             _tables.ItemsSource= tables;
+            _order = new RelayCommand(exe_order,canexe_order);
+        }
+        public void exe_order(object? parameter) 
+        {
+            OrderFood orderFood = new OrderFood();
+            orderFood.ShowDialog();
+        }
+        public bool canexe_order(object? parameter) 
+        {
+            if (_tables.SelectedItem != null) { return true; }
+            return false;
         }
     }
 }

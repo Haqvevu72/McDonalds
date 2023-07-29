@@ -22,7 +22,7 @@
                     <DataGridTextColumn Header="Cost" />
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Style="{StaticResource button}">Order</Button>
+            <Button Style="{StaticResource button}" Command="{Binding _order}">Order</Button>
         </StackPanel>
 
         <ListView Name="_tables" Grid.Column="1" Background="LightGoldenrodYellow">
