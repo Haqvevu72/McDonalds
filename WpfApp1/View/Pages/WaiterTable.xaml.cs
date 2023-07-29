@@ -17,6 +17,7 @@ using WpfApp1.Model;
 using System.IO;
 using Newtonsoft.Json;
 using WpfApp1.ViewModel;
+using System.Reflection;
 
 namespace WpfApp1.View.Pages
 {
@@ -31,19 +32,20 @@ namespace WpfApp1.View.Pages
         {
             InitializeComponent();
             DataContext = this;
-            string table_json = File.ReadAllText("C:\\Users\\Elgun\\Source\\Repos\\McDonalds\\WpfApp1\\JSON Files\\Tables.json");
+            string table_json = ReadEmbeddedJsonFile("Tables.json");
             tables = JsonConvert.DeserializeObject<ObservableCollection<table>>(table_json);
-            _tables.ItemsSource= tables;
-            _order = new RelayCommand(exe_order,canexe_order);
+            _tables.ItemsSource = tables;
+            _order = new RelayCommand(exe_order, canexe_order);
         }
-        public void exe_order(object? parameter) 
+        public void exe_order(object? parameter)
         {
             OrderFood orderFood = new OrderFood();
             table selecteditem = _tables.SelectedItem as table;
             selecteditem.Orders = orderFood.Order_List;
+            order_schedule.ItemsSource = selecteditem.Orders;
             orderFood.ShowDialog();
         }
-        public bool canexe_order(object? parameter) 
+        public bool canexe_order(object? parameter)
         {
             if (_tables.SelectedItem != null) { return true; }
             return false;
@@ -51,8 +53,18 @@ namespace WpfApp1.View.Pages
 
         private void _tables_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            table selecteditem = _tables.SelectedItem as table ;
+            table selecteditem = _tables.SelectedItem as table;
             order_schedule.ItemsSource = selecteditem.Orders;
+        }
+        public string ReadEmbeddedJsonFile(string fileName)
+        {
+
+            string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+            string jsonData = File.ReadAllText(filePath);
+
+            // Now you can deserialize the JSON data into objects or manipulate it as needed
+            // For example, using Newtonsoft.Json library to deserialize into a dynamic object:
+            return jsonData;
         }
     }
 }

@@ -17,6 +17,7 @@
     <None Remove="Images\Logged.webp" />
     <None Remove="Images\McDonald.webp" />
     <None Remove="Images\WaiterTable.jpg" />
+    <None Remove="JSON Files\Tables.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +34,7 @@
     <Resource Include="Images\Logged.webp" />
     <Resource Include="Images\McDonald.webp" />
     <Resource Include="Images\WaiterTable.jpg" />
+    <Resource Include="JSON Files\Tables.json" />
   </ItemGroup>
 
 </Project>
