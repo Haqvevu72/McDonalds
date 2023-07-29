@@ -16,11 +16,7 @@
         <Image Source="\Images\WaiterTable.jpg" Stretch="UniformToFill"></Image>
         <StackPanel>
             <DataGrid Name="order_schedule"  AutoGenerateColumns="True">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Name"/>
-                    <DataGridTextColumn Header="Count"/>
-                    <DataGridTextColumn Header="Cost" />
-                </DataGrid.Columns>
+                
             </DataGrid>
             <Button Style="{StaticResource button}" Command="{Binding _order}">Order</Button>
         </StackPanel>

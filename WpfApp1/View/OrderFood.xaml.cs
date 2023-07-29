@@ -49,7 +49,7 @@ namespace WpfApp1.View
         }
         public void exe_done(object? paramter) 
         {
-            
+           this.Close();
         }
         public bool canexe_done(object? parameter) 
         {
