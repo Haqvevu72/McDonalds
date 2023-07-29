@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel>
             <DataGrid Name="order_schedule"  AutoGenerateColumns="True"></DataGrid>
-            <Button Style="{StaticResource button}">Done</Button>
+            <Button Style="{StaticResource button}" Command="{Binding _done}">Done</Button>
         </StackPanel>
         <ListView x:Name="menu" Grid.Column="1" Background="LightGoldenrodYellow" SelectionChanged="menu_SelectionChanged">
             <ListView.ItemTemplate>

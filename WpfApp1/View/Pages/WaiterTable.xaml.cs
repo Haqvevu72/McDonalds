@@ -39,12 +39,20 @@ namespace WpfApp1.View.Pages
         public void exe_order(object? parameter) 
         {
             OrderFood orderFood = new OrderFood();
+            table selecteditem = _tables.SelectedItem as table;
+            selecteditem.Orders = orderFood.Order_List;
             orderFood.ShowDialog();
         }
         public bool canexe_order(object? parameter) 
         {
             if (_tables.SelectedItem != null) { return true; }
             return false;
+        }
+
+        private void _tables_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            table selecteditem = _tables.SelectedItem as table ;
+            order_schedule.ItemsSource = selecteditem.Orders;
         }
     }
 }

@@ -15,6 +15,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1.Model;
 using System.IO;
+using WpfApp1.ViewModel;
+using WpfApp1.View.Pages;
+
 namespace WpfApp1.View
 {
     /// <summary>
@@ -23,7 +26,8 @@ namespace WpfApp1.View
     public partial class OrderFood : Window
     {
         ObservableCollection<Food> Menu;
-        ObservableCollection<Order> Order_List = new ObservableCollection<Order>();
+        internal ObservableCollection<Order> Order_List = new ObservableCollection<Order>();
+        public ICommand _done { get; set; }
         public OrderFood()
         {
             InitializeComponent();
@@ -32,6 +36,7 @@ namespace WpfApp1.View
             Menu = JsonConvert.DeserializeObject<ObservableCollection<Food>>(foods_json);
             menu.ItemsSource = Menu;
             order_schedule.ItemsSource = Order_List;
+            _done = new RelayCommand(exe_done,canexe_done);
         }
 
         private void menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -41,6 +46,15 @@ namespace WpfApp1.View
                 Food selectedItem = menu.SelectedItem as Food;
                 Order_List.Add(new Order(selectedItem.FoodName, selectedItem.FoodCost));
             }
+        }
+        public void exe_done(object? paramter) 
+        {
+            
+        }
+        public bool canexe_done(object? parameter) 
+        {
+            if (Order_List.Count!=0) { return true; }
+            return false;
         }
     }
 }

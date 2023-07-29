@@ -28,5 +28,10 @@
     "TableName": "Table6",
     "ChairNumber": "12",
     "Orders": null
+  },
+  {
+    "TableName": "Table7",
+    "ChairNumber": "12",
+    "Orders": null
   }
 ]
