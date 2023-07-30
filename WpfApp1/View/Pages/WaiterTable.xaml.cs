@@ -60,10 +60,14 @@ namespace WpfApp1.View.Pages
         }
 
         public void exe_reset(object? parameter) {
-            order_schedule.ItemsSource = null;
+            table selecteditem = _tables.SelectedItem as table;
+            selecteditem.Orders = null;
+            order_schedule.ItemsSource = selecteditem.Orders;
+
         }
         public bool can_exe_reset(object? parameter) {
-            if (order_schedule.ItemsSource != null) { return true; }
+
+            if ( order_schedule.ItemsSource!=null) { return true; }
             return false;
         }
     }
