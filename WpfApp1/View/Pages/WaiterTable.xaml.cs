@@ -28,14 +28,16 @@ namespace WpfApp1.View.Pages
     {
         ObservableCollection<table> tables { get; set; }
         public ICommand _order { get; set; }
+        public ICommand _reset { get; set; }
         public WaiterTable()
         {
             InitializeComponent();
             DataContext = this;
-            string table_json = ReadEmbeddedJsonFile("Tables.json");
+            string table_json = File.ReadAllText("C:\\Users\\Elgun\\Source\\Repos\\McDonalds\\WpfApp1\\JSON Files\\Tables.json");
             tables = JsonConvert.DeserializeObject<ObservableCollection<table>>(table_json);
             _tables.ItemsSource = tables;
             _order = new RelayCommand(exe_order, canexe_order);
+            _reset = new RelayCommand(exe_reset,can_exe_reset);
         }
         public void exe_order(object? parameter)
         {
@@ -56,15 +58,13 @@ namespace WpfApp1.View.Pages
             table selecteditem = _tables.SelectedItem as table;
             order_schedule.ItemsSource = selecteditem.Orders;
         }
-        public string ReadEmbeddedJsonFile(string fileName)
-        {
 
-            string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
-            string jsonData = File.ReadAllText(filePath);
-
-            // Now you can deserialize the JSON data into objects or manipulate it as needed
-            // For example, using Newtonsoft.Json library to deserialize into a dynamic object:
-            return jsonData;
+        public void exe_reset(object? parameter) {
+            order_schedule.ItemsSource = null;
+        }
+        public bool can_exe_reset(object? parameter) {
+            if (order_schedule.ItemsSource != null) { return true; }
+            return false;
         }
     }
 }

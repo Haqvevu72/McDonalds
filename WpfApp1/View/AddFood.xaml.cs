@@ -17,6 +17,7 @@ using System.IO;
 using Newtonsoft.Json;
 using WpfApp1.ViewModel;
 using System.Windows.Resources;
+using Microsoft.Win32;
 
 namespace WpfApp1.View
 {
@@ -27,6 +28,7 @@ namespace WpfApp1.View
     {
         ObservableCollection<Food> foods { get; set; }
         public ICommand add_food { get; set; }
+        public ICommand browse_image { get; set; }
         public AddFood()
         {
             InitializeComponent();
@@ -35,6 +37,7 @@ namespace WpfApp1.View
             foods = JsonConvert.DeserializeObject<ObservableCollection<Food>>(foods_json);
             food_list.ItemsSource = foods;
             add_food =new  RelayCommand(exe_add_food,canexe_add_food);
+            browse_image = new RelayCommand(exe_browse,can_exe_browse);
         }
         public void exe_add_food(object? parameter) 
         {
@@ -44,6 +47,7 @@ namespace WpfApp1.View
             // Verify if the path exists and the file is an image (optional, but recommended)
             if (!string.IsNullOrWhiteSpace(imagePath) && File.Exists(imagePath) && IsImageFile(imagePath))
             {
+                
                 try
                 {
                     // Specify the folder where you want to save the image
@@ -91,6 +95,22 @@ namespace WpfApp1.View
         {
             if (food_name.Text != "" && food_cost.Text != "" && food_image_path.Text != "") { return true; }
             return false;
+        }
+
+        public void exe_browse(object? parameter) 
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.png;*.jpg;*.jpeg;*.gif)|*.png;*.jpg;*.jpeg;*.gif|All Files (*.*)|*.*";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // Set the selected file's path to the TextBox
+                food_image_path.Text = openFileDialog.FileName;
+            }
+        }
+        public bool can_exe_browse(object? parameter) 
+        {
+            return true;
         }
     }
 }

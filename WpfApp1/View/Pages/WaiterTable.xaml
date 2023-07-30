@@ -18,7 +18,10 @@
             <DataGrid Name="order_schedule"  AutoGenerateColumns="True">
                 
             </DataGrid>
-            <Button Style="{StaticResource button}" Command="{Binding _order}">Order</Button>
+            <StackPanel Orientation="Horizontal">
+                <Button Style="{StaticResource button}" Command="{Binding _order}">Order</Button>
+                <Button Style="{StaticResource button}" Command="{Binding _reset}">Reset</Button>
+            </StackPanel>
         </StackPanel>
 
         <ListView Name="_tables" Grid.Column="1" Background="LightGoldenrodYellow" SelectionChanged="_tables_SelectionChanged">
